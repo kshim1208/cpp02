@@ -78,34 +78,57 @@ bool Fixed::operator!=(const Fixed &rhs) const
 
 Fixed Fixed::operator+(const Fixed &source) const
 {
-	Fixed	arith(this->toFloat() + source.toFloat());
+	float	tmp;
+
+	tmp = this->toFloat() + source.toFloat();
+	if (tmp == NAN || tmp == INFINITY)
+	{
+		std::cout << "Inappropriate float value" << std::endl;
+		exit(1);
+	}
+	Fixed	arith = tmp;
 	return (arith);
 }
 
 Fixed Fixed::operator-(const Fixed &source) const
 {
-	Fixed	arith(this->toFloat() - source.toFloat());
+	float	tmp;
+
+	tmp = this->toFloat() - source.toFloat();
+	if (tmp == NAN || tmp == INFINITY)
+	{
+		std::cout << "Inappropriate float value" << std::endl;
+		exit(1);
+	}
+	Fixed	arith = tmp;
 	return (arith);
 }
 
 Fixed Fixed::operator*(const Fixed &source) const
 {
-	Fixed	arith;
+	float	tmp;
 
-	arith = this->toFloat() * source.toFloat();
+	tmp = this->toFloat() * source.toFloat();
+	if (tmp == NAN || tmp == INFINITY)
+	{
+		std::cout << "Inappropriate float value" << std::endl;
+		exit(1);
+	}
+	Fixed	arith = tmp;
 	return (arith);
 }
 
 Fixed Fixed::operator/(const Fixed &source) const
 {
-	Fixed	arith;
+	float	tmp;
 
-	if (source.toFloat() == 0)
+	tmp = this->toFloat() / source.toFloat();
+	if (tmp == NAN || tmp == INFINITY)
 	{
-		std::cout << "Divided by Zero is forbidden" << std::endl;
+		std::cout << "Inappropriate float value" << std::endl;
 		exit(1);
 	}
-	arith = this->toFloat() / source.toFloat();
+	Fixed	arith = tmp;
 	return (arith);
 }
 
