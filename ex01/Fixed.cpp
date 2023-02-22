@@ -12,7 +12,7 @@ Fixed::Fixed()
 Fixed::Fixed(const Fixed &source)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->fixed_ = source.getRawBits();
+	*this = source;
 }
 
 Fixed::Fixed(const int number)

@@ -4,19 +4,14 @@
 
 Fixed::Fixed()
 {
-	this->fixed_ = 0;
 	std::cout << "Default constructor called" << std::endl;
+	this->fixed_ = 0;
 }
 
 Fixed::Fixed(const Fixed &source)
 {
-	this->fixed_ = source.getRawBits();
 	std::cout << "Copy constructor called" << std::endl;
-}
-
-Fixed::Fixed(const int value)
-{
-	//It converts it to the corresponding fixed-point value. The fractional bits value is initialized to 8 like in exercise 00.
+	*this = source;
 }
 
 Fixed::~Fixed()

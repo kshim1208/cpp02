@@ -45,50 +45,50 @@ Fixed& Fixed::operator=(const Fixed &source)
 	return (*this);
 }
 
-bool Fixed::operator>(const Fixed &rhs)
+bool Fixed::operator>(const Fixed &rhs) const
 {
 	return (this->fixed_ > rhs.fixed_);
 }
 
-bool Fixed::operator<(const Fixed &rhs)
+bool Fixed::operator<(const Fixed &rhs) const
 {
 	return (this->fixed_ < rhs.fixed_);
 }
 
-bool Fixed::operator>=(const Fixed &rhs)
+bool Fixed::operator>=(const Fixed &rhs) const
 {
 	return (this->fixed_ >= rhs.fixed_);
 }
 
-bool Fixed::operator<=(const Fixed &rhs)
+bool Fixed::operator<=(const Fixed &rhs) const
 {
 	return (this->fixed_ <= rhs.fixed_);
 }
 
-bool Fixed::operator==(const Fixed &rhs)
+bool Fixed::operator==(const Fixed &rhs) const
 {
 	return (this->fixed_ == rhs.fixed_);
 }
 
-bool Fixed::operator!=(const Fixed &rhs)
+bool Fixed::operator!=(const Fixed &rhs) const
 {
 	return (this->fixed_ != rhs.fixed_);
 }
 
 
-Fixed Fixed::operator+(const Fixed &source)
+Fixed Fixed::operator+(const Fixed &source) const
 {
 	Fixed	arith(this->toFloat() + source.toFloat());
 	return (arith);
 }
 
-Fixed Fixed::operator-(const Fixed &source)
+Fixed Fixed::operator-(const Fixed &source) const
 {
 	Fixed	arith(this->toFloat() - source.toFloat());
 	return (arith);
 }
 
-Fixed Fixed::operator*(const Fixed &source)
+Fixed Fixed::operator*(const Fixed &source) const
 {
 	Fixed	arith;
 
@@ -96,7 +96,7 @@ Fixed Fixed::operator*(const Fixed &source)
 	return (arith);
 }
 
-Fixed Fixed::operator/(const Fixed &source)
+Fixed Fixed::operator/(const Fixed &source) const
 {
 	Fixed	arith;
 
