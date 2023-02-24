@@ -3,6 +3,8 @@
 #include <iostream>
 #include <fstream>
 
+#include <cmath>
+
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
